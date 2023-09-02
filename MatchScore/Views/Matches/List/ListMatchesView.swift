@@ -12,7 +12,6 @@ struct ListMatchesView: View {
     @StateObject private var vm = ListMatchesViewModel()
     
     var body: some View {
-        
         ZStack {
             Color
                 .background
@@ -35,10 +34,10 @@ struct ListMatchesView: View {
     
     func listView() -> some View {
         ScrollView {
-            LazyVStack {
+            LazyVStack(spacing: 20) {
                 ForEach(vm.matches) { match in
                     
-                    Text(match.leagueAndSerieName)
+                    MatchItemView(match: match)
                     
                     if vm.lastMatch == match {
                         FooterLoadingView(isFailed: false)

@@ -15,7 +15,15 @@ struct HomeView: View {
     }
     
     var body: some View {
-        ListMatchesView()
+        NavigationStack {
+            ZStack {
+                Color.background.ignoresSafeArea(.all)
+                ListMatchesView()
+            }
+            .navigationTitle(Strings.matches)
+            .navigationBarTitleDisplayMode(.large)
+        }
+        
     }
 }
 

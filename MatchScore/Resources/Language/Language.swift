@@ -10,6 +10,7 @@ import Foundation
 enum Strings {
     static let tapToRefresh = Strings.tr("Localizable", "components.loadingView.tapToRefresh")
     static let matches = Strings.tr("Localizable", "matches.title")
+    static let opponentsNotFound = Strings.tr("Localizable", "components.versusView.noOpponentsFound")
 }
 
 extension Strings {

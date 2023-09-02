@@ -17,8 +17,19 @@ struct Match {
     let serie: Serie
     let opponents: [OpponentWrapper]?
     
+    var matchTime: String {
+        guard let scheduledAt = scheduledAt else {
+            return "TBD"
+        }
+        return scheduledAt.dateStringToMatchTimeFormat()
+    }
+    
     var leagueAndSerieName: String {
         "\(league.name) - \(serie.fullName)"
+    }
+    
+    var IsRunning: Bool {
+        games.contains(where: { $0.status == .running })
     }
 }
 

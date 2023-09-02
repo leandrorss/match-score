@@ -39,6 +39,7 @@
 		E3409E9C2AA3B3C1005A6D1D /* PSImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3409E9B2AA3B3C1005A6D1D /* PSImageLoader.swift */; };
 		E3409E9F2AA3B40C005A6D1D /* PSImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3409E9E2AA3B40C005A6D1D /* PSImageView.swift */; };
 		E3409EA12AA3B44D005A6D1D /* PSImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3409EA02AA3B44D005A6D1D /* PSImageViewModel.swift */; };
+		E3409EA42AA3BC07005A6D1D /* VersusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3409EA32AA3BC07005A6D1D /* VersusView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +78,7 @@
 		E3409E9B2AA3B3C1005A6D1D /* PSImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSImageLoader.swift; sourceTree = "<group>"; };
 		E3409E9E2AA3B40C005A6D1D /* PSImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSImageView.swift; sourceTree = "<group>"; };
 		E3409EA02AA3B44D005A6D1D /* PSImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSImageViewModel.swift; sourceTree = "<group>"; };
+		E3409EA32AA3BC07005A6D1D /* VersusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersusView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -281,6 +283,7 @@
 		E3409E8A2AA3ACAD005A6D1D /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				E3409EA22AA3BBF8005A6D1D /* VersusView */,
 				E3409E9D2AA3B3F8005A6D1D /* PSImageView */,
 				E3409E972AA3AD71005A6D1D /* PSProgressView */,
 				E3409E962AA3AD67005A6D1D /* FooterLoadingView */,
@@ -328,6 +331,14 @@
 				E3409EA02AA3B44D005A6D1D /* PSImageViewModel.swift */,
 			);
 			path = PSImageView;
+			sourceTree = "<group>";
+		};
+		E3409EA22AA3BBF8005A6D1D /* VersusView */ = {
+			isa = PBXGroup;
+			children = (
+				E3409EA32AA3BC07005A6D1D /* VersusView.swift */,
+			);
+			path = VersusView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -428,6 +439,7 @@
 				E3409E6A2AA37DEB005A6D1D /* HTTPMethod.swift in Sources */,
 				E3409E682AA37DE4005A6D1D /* HTTPHeader.swift in Sources */,
 				E3409E9F2AA3B40C005A6D1D /* PSImageView.swift in Sources */,
+				E3409EA42AA3BC07005A6D1D /* VersusView.swift in Sources */,
 				E3409E622AA37D4E005A6D1D /* APIService.swift in Sources */,
 				E3409E342AA37369005A6D1D /* MatchScoreApp.swift in Sources */,
 				E3409E8F2AA3ACF4005A6D1D /* Language.swift in Sources */,
