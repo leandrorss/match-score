@@ -16,6 +16,18 @@ struct Match {
     let league: League
     let serie: Serie
     let opponents: [OpponentWrapper]?
+    
+    var leagueAndSerieName: String {
+        "\(league.name) - \(serie.fullName)"
+    }
+}
+
+extension Match: Identifiable { }
+
+extension Match: Equatable {
+    static func == (lhs: Match, rhs: Match) -> Bool {
+        lhs.id == rhs.id
+    }
 }
 
 extension Match: Decodable {

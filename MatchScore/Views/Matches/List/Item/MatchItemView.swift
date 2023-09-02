@@ -8,13 +8,16 @@
 import SwiftUI
 
 struct MatchItemView: View {
+    
+    let match: Match
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text(match.leagueAndSerieName)
     }
 }
 
 struct MatchItemView_Previews: PreviewProvider {
     static var previews: some View {
-        MatchItemView()
+        MatchItemView(match: Match.match)
     }
 }

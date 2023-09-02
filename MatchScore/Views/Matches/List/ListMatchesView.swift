@@ -8,8 +8,47 @@
 import SwiftUI
 
 struct ListMatchesView: View {
+    
+    @StateObject private var vm = ListMatchesViewModel()
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        ZStack {
+            Color
+                .background
+                .edgesIgnoringSafeArea(.all)
+            
+            VStack(alignment: .center) {
+                if vm.requestState == .initialFetch {
+                    PSProgressView()
+                } else {
+                    listView()
+                    Spacer()
+                }
+                
+            }
+            .padding(.horizontal, 25)
+            .navigationTitle(Strings.matches)
+            .navigationBarTitleDisplayMode(.large)
+        }
+    }
+    
+    func listView() -> some View {
+        ScrollView {
+            LazyVStack {
+                ForEach(vm.matches) { match in
+                    
+                    Text(match.leagueAndSerieName)
+                    
+                    if vm.lastMatch == match {
+                        FooterLoadingView(isFailed: false)
+                            .onAppear {
+                                vm.loadData(.additionalItems)
+                            }
+                    }
+                }
+            }
+        }
     }
 }
 
