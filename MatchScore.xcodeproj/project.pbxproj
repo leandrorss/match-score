@@ -20,6 +20,14 @@
 		E3409E592AA378DB005A6D1D /* ListMatchesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3409E582AA378DB005A6D1D /* ListMatchesView.swift */; };
 		E3409E5D2AA3792C005A6D1D /* ListMatchesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3409E5C2AA3792C005A6D1D /* ListMatchesViewModel.swift */; };
 		E3409E602AA3794F005A6D1D /* MatchItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3409E5F2AA3794F005A6D1D /* MatchItemView.swift */; };
+		E3409E622AA37D4E005A6D1D /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3409E612AA37D4E005A6D1D /* APIService.swift */; };
+		E3409E652AA37DBA005A6D1D /* URLSessionContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3409E642AA37DBA005A6D1D /* URLSessionContract.swift */; };
+		E3409E682AA37DE4005A6D1D /* HTTPHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3409E672AA37DE4005A6D1D /* HTTPHeader.swift */; };
+		E3409E6A2AA37DEB005A6D1D /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3409E692AA37DEB005A6D1D /* HTTPMethod.swift */; };
+		E3409E6D2AA37E38005A6D1D /* PSRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3409E6C2AA37E38005A6D1D /* PSRequest.swift */; };
+		E3409E6F2AA37E46005A6D1D /* PSEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3409E6E2AA37E46005A6D1D /* PSEndpoint.swift */; };
+		E3409E712AA37E50005A6D1D /* PSQueryItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3409E702AA37E50005A6D1D /* PSQueryItems.swift */; };
+		E3409E772AA38096005A6D1D /* PSPathComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3409E762AA38096005A6D1D /* PSPathComponent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +46,14 @@
 		E3409E582AA378DB005A6D1D /* ListMatchesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListMatchesView.swift; sourceTree = "<group>"; };
 		E3409E5C2AA3792C005A6D1D /* ListMatchesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListMatchesViewModel.swift; sourceTree = "<group>"; };
 		E3409E5F2AA3794F005A6D1D /* MatchItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchItemView.swift; sourceTree = "<group>"; };
+		E3409E612AA37D4E005A6D1D /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		E3409E642AA37DBA005A6D1D /* URLSessionContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionContract.swift; sourceTree = "<group>"; };
+		E3409E672AA37DE4005A6D1D /* HTTPHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPHeader.swift; sourceTree = "<group>"; };
+		E3409E692AA37DEB005A6D1D /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		E3409E6C2AA37E38005A6D1D /* PSRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSRequest.swift; sourceTree = "<group>"; };
+		E3409E6E2AA37E46005A6D1D /* PSEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSEndpoint.swift; sourceTree = "<group>"; };
+		E3409E702AA37E50005A6D1D /* PSQueryItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSQueryItems.swift; sourceTree = "<group>"; };
+		E3409E762AA38096005A6D1D /* PSPathComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSPathComponent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +136,10 @@
 		E3409E442AA374EA005A6D1D /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				E3409E6B2AA37E2A005A6D1D /* Resource */,
+				E3409E662AA37DD7005A6D1D /* HTTP */,
+				E3409E632AA37DA9005A6D1D /* URL */,
+				E3409E612AA37D4E005A6D1D /* APIService.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -127,6 +147,8 @@
 		E3409E452AA374EF005A6D1D /* API */ = {
 			isa = PBXGroup;
 			children = (
+				E3409E732AA38055005A6D1D /* Service */,
+				E3409E722AA38045005A6D1D /* Models */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -174,6 +196,56 @@
 				E3409E5F2AA3794F005A6D1D /* MatchItemView.swift */,
 			);
 			path = Item;
+			sourceTree = "<group>";
+		};
+		E3409E632AA37DA9005A6D1D /* URL */ = {
+			isa = PBXGroup;
+			children = (
+				E3409E642AA37DBA005A6D1D /* URLSessionContract.swift */,
+			);
+			path = URL;
+			sourceTree = "<group>";
+		};
+		E3409E662AA37DD7005A6D1D /* HTTP */ = {
+			isa = PBXGroup;
+			children = (
+				E3409E672AA37DE4005A6D1D /* HTTPHeader.swift */,
+				E3409E692AA37DEB005A6D1D /* HTTPMethod.swift */,
+			);
+			path = HTTP;
+			sourceTree = "<group>";
+		};
+		E3409E6B2AA37E2A005A6D1D /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				E3409E6C2AA37E38005A6D1D /* PSRequest.swift */,
+				E3409E6E2AA37E46005A6D1D /* PSEndpoint.swift */,
+				E3409E702AA37E50005A6D1D /* PSQueryItems.swift */,
+				E3409E762AA38096005A6D1D /* PSPathComponent.swift */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		E3409E722AA38045005A6D1D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E3409E742AA3805E005A6D1D /* Response */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E3409E732AA38055005A6D1D /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		E3409E742AA3805E005A6D1D /* Response */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Response;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,11 +323,19 @@
 			files = (
 				E3409E5D2AA3792C005A6D1D /* ListMatchesViewModel.swift in Sources */,
 				E3409E362AA37369005A6D1D /* ContentView.swift in Sources */,
+				E3409E772AA38096005A6D1D /* PSPathComponent.swift in Sources */,
+				E3409E652AA37DBA005A6D1D /* URLSessionContract.swift in Sources */,
+				E3409E6F2AA37E46005A6D1D /* PSEndpoint.swift in Sources */,
 				E3409E532AA3763D005A6D1D /* Fonts.swift in Sources */,
 				E3409E592AA378DB005A6D1D /* ListMatchesView.swift in Sources */,
 				E3409E492AA375C0005A6D1D /* Colors.swift in Sources */,
 				E3409E602AA3794F005A6D1D /* MatchItemView.swift in Sources */,
 				E3409E512AA3762B005A6D1D /* FontManager.swift in Sources */,
+				E3409E6D2AA37E38005A6D1D /* PSRequest.swift in Sources */,
+				E3409E712AA37E50005A6D1D /* PSQueryItems.swift in Sources */,
+				E3409E6A2AA37DEB005A6D1D /* HTTPMethod.swift in Sources */,
+				E3409E682AA37DE4005A6D1D /* HTTPHeader.swift in Sources */,
+				E3409E622AA37D4E005A6D1D /* APIService.swift in Sources */,
 				E3409E342AA37369005A6D1D /* MatchScoreApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -389,6 +469,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MatchScore/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.news";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -419,6 +500,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MatchScore/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.news";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
