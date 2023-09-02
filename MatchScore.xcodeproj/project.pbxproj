@@ -36,6 +36,9 @@
 		E3409E8F2AA3ACF4005A6D1D /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3409E8E2AA3ACF4005A6D1D /* Language.swift */; };
 		E3409E922AA3AD17005A6D1D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E3409E942AA3AD17005A6D1D /* Localizable.strings */; };
 		E3409E992AA3AD8B005A6D1D /* PSProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3409E982AA3AD8B005A6D1D /* PSProgressView.swift */; };
+		E3409E9C2AA3B3C1005A6D1D /* PSImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3409E9B2AA3B3C1005A6D1D /* PSImageLoader.swift */; };
+		E3409E9F2AA3B40C005A6D1D /* PSImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3409E9E2AA3B40C005A6D1D /* PSImageView.swift */; };
+		E3409EA12AA3B44D005A6D1D /* PSImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3409EA02AA3B44D005A6D1D /* PSImageViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +74,9 @@
 		E3409E932AA3AD17005A6D1D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E3409E952AA3AD1A005A6D1D /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		E3409E982AA3AD8B005A6D1D /* PSProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSProgressView.swift; sourceTree = "<group>"; };
+		E3409E9B2AA3B3C1005A6D1D /* PSImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSImageLoader.swift; sourceTree = "<group>"; };
+		E3409E9E2AA3B40C005A6D1D /* PSImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSImageView.swift; sourceTree = "<group>"; };
+		E3409EA02AA3B44D005A6D1D /* PSImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSImageViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,10 +109,11 @@
 		E3409E322AA37369005A6D1D /* MatchScore */ = {
 			isa = PBXGroup;
 			children = (
-				E3409E7F2AA3855C005A6D1D /* Extension */,
-				E3409E7B2AA384A9005A6D1D /* API */,
 				E3409E542AA3767F005A6D1D /* Info.plist */,
+				E3409E7B2AA384A9005A6D1D /* API */,
 				E3409E442AA374EA005A6D1D /* Network */,
+				E3409E9A2AA3B3B5005A6D1D /* Manager */,
+				E3409E7F2AA3855C005A6D1D /* Extension */,
 				E3409E432AA374E5005A6D1D /* Resources */,
 				E3409E8A2AA3ACAD005A6D1D /* Components */,
 				E3409E412AA374DC005A6D1D /* Views */,
@@ -274,6 +281,7 @@
 		E3409E8A2AA3ACAD005A6D1D /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				E3409E9D2AA3B3F8005A6D1D /* PSImageView */,
 				E3409E972AA3AD71005A6D1D /* PSProgressView */,
 				E3409E962AA3AD67005A6D1D /* FooterLoadingView */,
 			);
@@ -303,6 +311,23 @@
 				E3409E982AA3AD8B005A6D1D /* PSProgressView.swift */,
 			);
 			path = PSProgressView;
+			sourceTree = "<group>";
+		};
+		E3409E9A2AA3B3B5005A6D1D /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				E3409E9B2AA3B3C1005A6D1D /* PSImageLoader.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		E3409E9D2AA3B3F8005A6D1D /* PSImageView */ = {
+			isa = PBXGroup;
+			children = (
+				E3409E9E2AA3B40C005A6D1D /* PSImageView.swift */,
+				E3409EA02AA3B44D005A6D1D /* PSImageViewModel.swift */,
+			);
+			path = PSImageView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -383,6 +408,7 @@
 				E3409E5D2AA3792C005A6D1D /* ListMatchesViewModel.swift in Sources */,
 				E3409E772AA38096005A6D1D /* PSPathComponent.swift in Sources */,
 				E3409E8C2AA3ACC7005A6D1D /* FooterLoadingView.swift in Sources */,
+				E3409E9C2AA3B3C1005A6D1D /* PSImageLoader.swift in Sources */,
 				E3409E812AA38588005A6D1D /* String+DateString.swift in Sources */,
 				E3409E842AA385C0005A6D1D /* Matches.swift in Sources */,
 				E3409E652AA37DBA005A6D1D /* URLSessionContract.swift in Sources */,
@@ -396,10 +422,12 @@
 				E3409E6D2AA37E38005A6D1D /* PSRequest.swift in Sources */,
 				E3409E992AA3AD8B005A6D1D /* PSProgressView.swift in Sources */,
 				E3409E712AA37E50005A6D1D /* PSQueryItems.swift in Sources */,
+				E3409EA12AA3B44D005A6D1D /* PSImageViewModel.swift in Sources */,
 				E3409E892AA3AB1F005A6D1D /* HomeView.swift in Sources */,
 				E3409E872AA3A989005A6D1D /* MatchService.swift in Sources */,
 				E3409E6A2AA37DEB005A6D1D /* HTTPMethod.swift in Sources */,
 				E3409E682AA37DE4005A6D1D /* HTTPHeader.swift in Sources */,
+				E3409E9F2AA3B40C005A6D1D /* PSImageView.swift in Sources */,
 				E3409E622AA37D4E005A6D1D /* APIService.swift in Sources */,
 				E3409E342AA37369005A6D1D /* MatchScoreApp.swift in Sources */,
 				E3409E8F2AA3ACF4005A6D1D /* Language.swift in Sources */,
