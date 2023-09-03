@@ -10,17 +10,17 @@ import SwiftUI
 struct RefreshableScrollView<Content:View>: View {
     init(
         action: (() -> Void)? = nil,
-        isRefreshing: Binding<Bool>,
+        requestState: Binding<RequestState>,
         @ViewBuilder content: @escaping () -> Content)
     {
         self.content = content
         self.refreshAction = action
-        self._isRefreshing = isRefreshing
+        self._requestState = requestState
     }
     var body: some View {
         GeometryReader { geometry in
             ScrollView {
-                if isRefreshing {
+                if requestState == .refresh {
                     PSProgressView()
                         .padding(.bottom)
                 }
@@ -31,7 +31,7 @@ struct RefreshableScrollView<Content:View>: View {
             }
             .onPreferenceChange(OffsetPreferenceKey.self) { offset in
                 if offset > threshold {
-                    if !isRefreshing {
+                    if requestState != .refresh {
                         refreshAction?()
                     }
                 }
@@ -40,7 +40,7 @@ struct RefreshableScrollView<Content:View>: View {
     }
 
     // MARK: - Private
-    @Binding var isRefreshing: Bool
+    @Binding var requestState: RequestState
     private var content: () -> Content
     private var refreshAction: (() -> Void)?
     private let threshold: CGFloat = 50.0

@@ -81,16 +81,6 @@ class ListMatchesViewModel: ObservableObject {
     }
 }
 
-// MARK: - Enum Request States
-extension ListMatchesViewModel {
-    enum RequestState {
-        case none
-        case refresh
-        case initialFetch
-        case additionalItems
-    }
-}
-
 // MARK: - Private function
 extension ListMatchesViewModel {
     private func updateRequestPage() {

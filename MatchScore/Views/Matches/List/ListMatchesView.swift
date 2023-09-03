@@ -35,32 +35,35 @@ struct ListMatchesView: View {
         }
     }
     
+    func refreshData() {
+        vm.loadData(.refresh)
+    }
+    
     func listView() -> some View {
-        ScrollView {
-            LazyVStack(spacing: 20) {
-                if vm.noMatchesFound {
-                    Text(Strings.matchesNotFound)
-                        .font(.heading1)
-                        .foregroundColor(Color.primaryTextColor)
-                } else {
-                    ForEach(vm.matches) { match in
-                        
-                        NavigationLink {
-                            MatchDetailsView()
-                        } label: {
-                            MatchItemView(match: match)
-                        }
-                        
-                        if vm.lastMatch == match {
-                            FooterLoadingView(isFailed: false)
-                                .onAppear {
-                                    vm.loadData(.additionalItems)
-                                }
+        RefreshableScrollView(action: refreshData, requestState: $vm.requestState) {
+                LazyVStack(spacing: 20) {
+                    if vm.noMatchesFound {
+                        Text(Strings.matchesNotFound)
+                            .font(.heading1)
+                            .foregroundColor(Color.primaryTextColor)
+                    } else {
+                        ForEach(vm.matches) { match in
+                            NavigationLink {
+                                MatchDetailsView(match: match)
+                            } label: {
+                                MatchItemView(match: match)
+                            }
+                            
+                            if vm.lastMatch == match {
+                                FooterLoadingView(isFailed: false)
+                                    .onAppear {
+                                        vm.loadData(.additionalItems)
+                                    }
+                            }
                         }
                     }
+                    
                 }
-                
-            }
         }
     }
 }

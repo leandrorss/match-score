@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E333EFAE2AA54CC9000391FB /* RequestStateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E333EFAD2AA54CC9000391FB /* RequestStateModel.swift */; };
 		E3409E342AA37369005A6D1D /* MatchScoreApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3409E332AA37369005A6D1D /* MatchScoreApp.swift */; };
 		E3409E382AA3736A005A6D1D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3409E372AA3736A005A6D1D /* Assets.xcassets */; };
 		E3409E3B2AA3736A005A6D1D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3409E3A2AA3736A005A6D1D /* Preview Assets.xcassets */; };
@@ -50,6 +51,7 @@
 		E3409EC72AA5462A005A6D1D /* TeamService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3409EC62AA5462A005A6D1D /* TeamService.swift */; };
 		E3409EC92AA5465A005A6D1D /* ResponseModel.Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3409EC82AA5465A005A6D1D /* ResponseModel.Team.swift */; };
 		E3409ECB2AA54690005A6D1D /* Players.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3409ECA2AA54690005A6D1D /* Players.swift */; };
+		E3409ECE2AA549C5005A6D1D /* Icons.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3409ECD2AA549C5005A6D1D /* Icons.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E333EFAD2AA54CC9000391FB /* RequestStateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestStateModel.swift; sourceTree = "<group>"; };
 		E3409E302AA37369005A6D1D /* MatchScore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MatchScore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3409E332AA37369005A6D1D /* MatchScoreApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchScoreApp.swift; sourceTree = "<group>"; };
 		E3409E372AA3736A005A6D1D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -110,6 +113,7 @@
 		E3409EC62AA5462A005A6D1D /* TeamService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamService.swift; sourceTree = "<group>"; };
 		E3409EC82AA5465A005A6D1D /* ResponseModel.Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseModel.Team.swift; sourceTree = "<group>"; };
 		E3409ECA2AA54690005A6D1D /* Players.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Players.swift; sourceTree = "<group>"; };
+		E3409ECD2AA549C5005A6D1D /* Icons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Icons.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +134,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E333EFAC2AA54CBA000391FB /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				E333EFAD2AA54CC9000391FB /* RequestStateModel.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 		E3409E272AA37369005A6D1D = {
 			isa = PBXGroup;
 			children = (
@@ -151,6 +163,7 @@
 		E3409E322AA37369005A6D1D /* MatchScore */ = {
 			isa = PBXGroup;
 			children = (
+				E333EFAC2AA54CBA000391FB /* Util */,
 				E3409E542AA3767F005A6D1D /* Info.plist */,
 				E3409E7B2AA384A9005A6D1D /* API */,
 				E3409E442AA374EA005A6D1D /* Network */,
@@ -185,6 +198,7 @@
 		E3409E432AA374E5005A6D1D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E3409ECC2AA549BD005A6D1D /* Icons */,
 				E3409E8D2AA3ACE4005A6D1D /* Language */,
 				E3409E472AA375AF005A6D1D /* Typograph */,
 				E3409E462AA375AA005A6D1D /* Fonts */,
@@ -430,6 +444,14 @@
 			path = Details;
 			sourceTree = "<group>";
 		};
+		E3409ECC2AA549BD005A6D1D /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				E3409ECD2AA549C5005A6D1D /* Icons.swift */,
+			);
+			path = Icons;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -563,6 +585,8 @@
 				E3409E6A2AA37DEB005A6D1D /* HTTPMethod.swift in Sources */,
 				E3409E682AA37DE4005A6D1D /* HTTPHeader.swift in Sources */,
 				E3409E9F2AA3B40C005A6D1D /* PSImageView.swift in Sources */,
+				E3409ECE2AA549C5005A6D1D /* Icons.swift in Sources */,
+				E333EFAE2AA54CC9000391FB /* RequestStateModel.swift in Sources */,
 				E3409EA42AA3BC07005A6D1D /* VersusView.swift in Sources */,
 				E3409E622AA37D4E005A6D1D /* APIService.swift in Sources */,
 				E3409EC92AA5465A005A6D1D /* ResponseModel.Team.swift in Sources */,

@@ -12,7 +12,7 @@ protocol TeamServiceContract {
     func getTeam(videogame: PSVideogame, id: Int) -> AnyPublisher<[Team], Error>
 }
 
-class TeamResources: TeamServiceContract {
+class TeamService: TeamServiceContract {
     
     private let apiService: APIService
     
