@@ -26,6 +26,9 @@ struct ListMatchesView: View {
                 }
                 
             }
+            .onAppear {
+                vm.onAppear()
+            }
             .padding(.horizontal, 25)
             .navigationTitle(Strings.matches)
             .navigationBarTitleDisplayMode(.large)
@@ -35,17 +38,22 @@ struct ListMatchesView: View {
     func listView() -> some View {
         ScrollView {
             LazyVStack(spacing: 20) {
-                ForEach(vm.matches) { match in
-                    
-                    MatchItemView(match: match)
-                    
-                    if vm.lastMatch == match {
-                        FooterLoadingView(isFailed: false)
-                            .onAppear {
-                                vm.loadData(.additionalItems)
-                            }
+                if vm.noMatchesFound {
+                    Text(Strings.matchesNotFound)
+                } else {
+                    ForEach(vm.matches) { match in
+                        
+                        MatchItemView(match: match)
+                        
+                        if vm.lastMatch == match {
+                            FooterLoadingView(isFailed: false)
+                                .onAppear {
+                                    vm.loadData(.additionalItems)
+                                }
+                        }
                     }
                 }
+                
             }
         }
     }

@@ -11,6 +11,7 @@ import Combine
 class ListMatchesViewModel: ObservableObject {
     
     private let matchService: MatchServiceContract
+    private let mainDispatchQueue: DispatchQueueContract
     private var cancelables = Set<AnyCancellable>()
     
     @Published var requestState: RequestState = .none
@@ -22,8 +23,19 @@ class ListMatchesViewModel: ObservableObject {
         return matches[matches.count - 1]
     }
     
-    init(matchService: MatchServiceContract = MatchService()) {
+    var noMatchesFound: Bool {
+        matches.isEmpty
+    }
+    
+    init(
+        matchService: MatchServiceContract = MatchService(),
+        mainDispatchQueue: DispatchQueueContract = DispatchQueue.main
+    ) {
         self.matchService = matchService
+        self.mainDispatchQueue = mainDispatchQueue
+    }
+    
+    func onAppear() {
         loadData(.initialFetch)
     }
     
@@ -43,15 +55,18 @@ class ListMatchesViewModel: ObservableObject {
             .sink { completion in
                 switch completion {
                 case .finished:
-                    DispatchQueue.main.async {
+                    self.mainDispatchQueue.async {
                         self.requestState = .none
                     }
                     print("fetchMatches finished")
                 case .failure(let error):
+                    self.mainDispatchQueue.async {
+                        self.requestState = .none
+                    }
                     print(error.localizedDescription)
                 }
             } receiveValue: { [weak self] fetchedMatches in
-                DispatchQueue.main.async {
+                self?.mainDispatchQueue.async {
                     switch self?.requestState {
                     case .initialFetch, .refresh:
                         self?.matches = fetchedMatches

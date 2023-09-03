@@ -11,6 +11,8 @@ enum Strings {
     static let tapToRefresh = Strings.tr("Localizable", "components.loadingView.tapToRefresh")
     static let matches = Strings.tr("Localizable", "matches.title")
     static let opponentsNotFound = Strings.tr("Localizable", "components.versusView.noOpponentsFound")
+    static let matchesNotFound = Strings.tr("Localizable", "matches.list.matchesNotFound")
+    
 }
 
 extension Strings {

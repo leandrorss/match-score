@@ -1,3 +1,4 @@
 "matches.title" = "Matches";
 "components.loadingView.tapToRefresh" = "Tap to refresh";
 "components.versusView.noOpponentsFound" = "Opponents not found.";
+"matches.list.matchesNotFound" = "Matches not found.";

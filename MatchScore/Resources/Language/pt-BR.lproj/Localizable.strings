@@ -1,3 +1,4 @@
 "matches.title" = "Partidas";
 "components.loadingView.tapToRefresh" = "Toque para atualizar";
 "components.versusView.noOpponentsFound" = "Oponentes não encontrados.";
+"matches.list.matchesNotFound" = "Partidas não encontradas.";
