@@ -40,10 +40,16 @@ struct ListMatchesView: View {
             LazyVStack(spacing: 20) {
                 if vm.noMatchesFound {
                     Text(Strings.matchesNotFound)
+                        .font(.heading1)
+                        .foregroundColor(Color.primaryTextColor)
                 } else {
                     ForEach(vm.matches) { match in
                         
-                        MatchItemView(match: match)
+                        NavigationLink {
+                            MatchDetailsView()
+                        } label: {
+                            MatchItemView(match: match)
+                        }
                         
                         if vm.lastMatch == match {
                             FooterLoadingView(isFailed: false)

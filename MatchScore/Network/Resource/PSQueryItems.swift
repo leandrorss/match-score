@@ -13,4 +13,5 @@ enum PSQueryItems {
     static let size = "size"
     static let perPage = "per_page"
     static let opponentsFilled = "filter[opponents_filled]"
+    static let filterById = "filter[id]"
 }
