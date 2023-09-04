@@ -12,29 +12,30 @@ class MatchDetailsViewModel: ObservableObject {
     
     var cancelables = Set<AnyCancellable>()
     
-    let service: TeamServiceContract
+    private let service: TeamServiceContract
+    private let mainDispatchQueue: DispatchQueueContract
     
     @Published var teams: [Team] = []
     
     let match: Match
     
-    var playersOpponentOne: [Player] {
-        guard let opponents = match.opponents, opponents.count >= 1 else {
-            return []
-        }
-        
-        let opponentId = opponents[0].opponent.id
-        return teams.first(where: { $0.id == opponentId })?.players ?? []
-    }
+    @Published var requestState: RequestState = .none
     
-    var playersOpponentTwo: [Player] {
-        guard let opponents = match.opponents, opponents.count >= 2 else {
+    private func playersForOpponent(at index: Int) -> [Player] {
+        guard let opponents = match.opponents, index < opponents.count else {
             return []
         }
         
-        let opponentId = opponents[1].opponent.id
-        return teams.first(where: { $0.id == opponentId })?.players ?? []
-        
+        let opponentId = opponents[index].opponent.id
+        return teams.first { $0.id == opponentId }?.players ?? []
+    }
+
+    var playersOpponentOne: [Player] {
+        return playersForOpponent(at: 0)
+    }
+
+    var playersOpponentTwo: [Player] {
+        return playersForOpponent(at: 1)
     }
     
     var hasOpponents: Bool {
@@ -43,13 +44,17 @@ class MatchDetailsViewModel: ObservableObject {
     
     init(
         match: Match,
-        service: TeamServiceContract = TeamService()
+        service: TeamServiceContract = TeamService(),
+        mainDispatchQueue: DispatchQueueContract = DispatchQueue.main
     ) {
         self.service = service
         self.match = match
+        self.mainDispatchQueue = mainDispatchQueue
     }
     
-    func loadTeams() {
+    func loadTeams(_ operation: RequestState) {
+        
+        self.requestState = operation
         
         let teamsId: [Int] = match.opponents?.compactMap({ $0.opponent.id }) ?? []
         
@@ -59,13 +64,21 @@ class MatchDetailsViewModel: ObservableObject {
             .sink { completion in
                 switch completion {
                 case .finished:
-                    break
+                    self.mainDispatchQueue.async {
+                        self.requestState = .none
+                    }
+                    print("fetch Teams")
                 case .failure(let error):
+                    self.mainDispatchQueue.async {
+                        self.requestState = .none
+                    }
                     print(error)
                 }
-            } receiveValue: { teams in
-                DispatchQueue.main.async {
-                    self.teams.append(teams[0])
+            } receiveValue: { [weak self] teams in
+                if !teams.isEmpty {
+                    self?.mainDispatchQueue.async {
+                        self?.teams.append(teams[0])
+                    }
                 }
             }
             .store(in: &cancelables)

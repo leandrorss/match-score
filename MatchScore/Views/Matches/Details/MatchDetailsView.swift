@@ -27,20 +27,11 @@ struct MatchDetailsView: View {
                     .font(.bodyRegular1)
                     .foregroundColor(Color.primaryTextColor)
                 
-                if vm.hasOpponents {
-                    ScrollView {
-                        HStack {
-                            renderTeamPlayers(players: vm.playersOpponentOne)
-                            
-                            Spacer()
-                            
-                            renderTeamPlayers(players: vm.playersOpponentTwo)
-                        }
-                    }
+                if vm.requestState == .none {
+                    opponents()
                 } else {
-                    Text(Strings.opponentsNotFound)
-                        .font(.bodyBold1)
-                        .foregroundColor(.white)
+                    PSProgressView()
+                        .controlSize(.large)
                 }
                 
                 Spacer()
@@ -58,15 +49,34 @@ struct MatchDetailsView: View {
                 }
             }
             .onAppear {
-                vm.loadTeams()
+                vm.loadTeams(.initialFetch)
             }
         }
     }
     
-    func renderTeamPlayers(players: [Player]) -> some View {
+    @ViewBuilder
+    func opponents() -> some View {
+        if vm.hasOpponents {
+            ScrollView {
+                HStack {
+                    teamPlayers(players: vm.playersOpponentOne)
+                    
+                    Spacer()
+                    
+                    teamPlayers(players: vm.playersOpponentTwo)
+                }
+            }
+        } else {
+            Text(Strings.opponentsNotFound)
+                .font(.bodyBold1)
+                .foregroundColor(.white)
+        }
+    }
+    
+    func teamPlayers(players: [Player]) -> some View {
         VStack(spacing: 12) {
             ForEach(players) { player in
-                Text(player.nickname)
+                PlayerCardView(player: player)
             }
             Spacer()
         }

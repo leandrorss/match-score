@@ -70,6 +70,7 @@ class ListMatchesViewModel: ObservableObject {
                     switch self?.requestState {
                     case .initialFetch, .refresh:
                         self?.matches = fetchedMatches
+                        self?.matches.remove(at: 0)
                     case .additionalItems:
                         self?.matches.append(contentsOf: fetchedMatches)
                     default:

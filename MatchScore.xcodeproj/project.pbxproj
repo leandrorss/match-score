@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		E333EFAE2AA54CC9000391FB /* RequestStateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E333EFAD2AA54CC9000391FB /* RequestStateModel.swift */; };
+		E333EFB02AA54EEA000391FB /* PlayerCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E333EFAF2AA54EEA000391FB /* PlayerCardView.swift */; };
+		E333EFB32AA55416000391FB /* View+GestureSlideBack.swift in Sources */ = {isa = PBXBuildFile; fileRef = E333EFB22AA55416000391FB /* View+GestureSlideBack.swift */; };
 		E3409E342AA37369005A6D1D /* MatchScoreApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3409E332AA37369005A6D1D /* MatchScoreApp.swift */; };
 		E3409E382AA3736A005A6D1D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3409E372AA3736A005A6D1D /* Assets.xcassets */; };
 		E3409E3B2AA3736A005A6D1D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3409E3A2AA3736A005A6D1D /* Preview Assets.xcassets */; };
@@ -66,6 +68,8 @@
 
 /* Begin PBXFileReference section */
 		E333EFAD2AA54CC9000391FB /* RequestStateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestStateModel.swift; sourceTree = "<group>"; };
+		E333EFAF2AA54EEA000391FB /* PlayerCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCardView.swift; sourceTree = "<group>"; };
+		E333EFB22AA55416000391FB /* View+GestureSlideBack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+GestureSlideBack.swift"; sourceTree = "<group>"; };
 		E3409E302AA37369005A6D1D /* MatchScore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MatchScore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3409E332AA37369005A6D1D /* MatchScoreApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchScoreApp.swift; sourceTree = "<group>"; };
 		E3409E372AA3736A005A6D1D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -142,6 +146,14 @@
 			path = Util;
 			sourceTree = "<group>";
 		};
+		E333EFB12AA54F26000391FB /* PlayerCardView */ = {
+			isa = PBXGroup;
+			children = (
+				E333EFAF2AA54EEA000391FB /* PlayerCardView.swift */,
+			);
+			path = PlayerCardView;
+			sourceTree = "<group>";
+		};
 		E3409E272AA37369005A6D1D = {
 			isa = PBXGroup;
 			children = (
@@ -163,12 +175,12 @@
 		E3409E322AA37369005A6D1D /* MatchScore */ = {
 			isa = PBXGroup;
 			children = (
-				E333EFAC2AA54CBA000391FB /* Util */,
 				E3409E542AA3767F005A6D1D /* Info.plist */,
 				E3409E7B2AA384A9005A6D1D /* API */,
 				E3409E442AA374EA005A6D1D /* Network */,
 				E3409E9A2AA3B3B5005A6D1D /* Manager */,
 				E3409E7F2AA3855C005A6D1D /* Extension */,
+				E333EFAC2AA54CBA000391FB /* Util */,
 				E3409E432AA374E5005A6D1D /* Resources */,
 				E3409E8A2AA3ACAD005A6D1D /* Components */,
 				E3409E412AA374DC005A6D1D /* Views */,
@@ -316,6 +328,7 @@
 			isa = PBXGroup;
 			children = (
 				E3409E802AA38588005A6D1D /* String+DateString.swift */,
+				E333EFB22AA55416000391FB /* View+GestureSlideBack.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -341,6 +354,7 @@
 		E3409E8A2AA3ACAD005A6D1D /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				E333EFB12AA54F26000391FB /* PlayerCardView */,
 				E3409EBE2AA54559005A6D1D /* RefreshableControl */,
 				E3409EA22AA3BBF8005A6D1D /* VersusView */,
 				E3409E9D2AA3B3F8005A6D1D /* PSImageView */,
@@ -567,6 +581,7 @@
 				E3409E842AA385C0005A6D1D /* Matches.swift in Sources */,
 				E3409EC02AA5456C005A6D1D /* RefreshableControl.swift in Sources */,
 				E3409E652AA37DBA005A6D1D /* URLSessionContract.swift in Sources */,
+				E333EFB02AA54EEA000391FB /* PlayerCardView.swift in Sources */,
 				E3409E6F2AA37E46005A6D1D /* PSEndpoint.swift in Sources */,
 				E3409E532AA3763D005A6D1D /* Fonts.swift in Sources */,
 				E3409EBD2AA4D5E8005A6D1D /* DispatchQueueContract.swift in Sources */,
@@ -577,6 +592,7 @@
 				E3409E512AA3762B005A6D1D /* FontManager.swift in Sources */,
 				E3409E6D2AA37E38005A6D1D /* PSRequest.swift in Sources */,
 				E3409E992AA3AD8B005A6D1D /* PSProgressView.swift in Sources */,
+				E333EFB32AA55416000391FB /* View+GestureSlideBack.swift in Sources */,
 				E3409E712AA37E50005A6D1D /* PSQueryItems.swift in Sources */,
 				E3409EA12AA3B44D005A6D1D /* PSImageViewModel.swift in Sources */,
 				E3409E892AA3AB1F005A6D1D /* HomeView.swift in Sources */,
